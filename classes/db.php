@@ -1,18 +1,22 @@
 <?php
 
-class DB { 
-    $servername = 'localhost';
-    $bdd = 'sakila';
-    $username = 'root';
-    $password = '';
+class Database { 
+    public $servername = 'localhost';
+    public $bdd = 'sakila';
+    public $username = 'root';
+    public $password = '';
 
-   public function __construct($s, $n, $p){
-      $this->servername = $s;
-      $this->username = $n;
-      $this->userword = $w;
-   }
+    private $connexion;
+
+    
+}
             
    /*-------------------------Connexion à la base de donnée "sakila"---------------------------*/
+
+
+/*
+if( $titreFilm == "Matrix")
+   
    $conn = new mysqli($servername, $username, $password); 
       
      
@@ -21,11 +25,11 @@ class DB {
    }       
    echo 'Successful connection ! <br><br><br>';
 
-}
 
 
 
-  
+
+  */
 
          
           
