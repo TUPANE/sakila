@@ -2,19 +2,15 @@
    
 require 'classes/db.php';
    
-$laBase = new  Database;
+$laBase = new Database;
 
-echo $laBase->bdd;
+$result = $laBase->query('SELECT * FROM sakila.film');
 
-/*
-$film = new DB ();
-$results = $film->query('SELECT * FROM sakila.film');
-
-while($obj = $results->fetch_object()){
+foreach( $result->fetch_all(MYSQLI_ASSOC) as $obj)
+{
    echo "<div style='color:blue' class='container'>
-   <label>".$obj->title ."</label>
-   <p>". $obj->description ."</p>
+   <label>".$obj["title"] ."</label>
+   <p>". $obj["description"] ."</p>
   </div>";
 }
 
-*/

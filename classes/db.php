@@ -1,36 +1,24 @@
 <?php
 
 class Database { 
-    public $servername = 'localhost';
-    public $bdd = 'sakila';
-    public $username = 'root';
-    public $password = '';
+    private $servername = 'localhost';
+    private $bdd = 'sakila';
+    private $username = 'root';
+    private $password = '';
 
-    private $connexion;
+    public $connection = null;
 
-    
+    private function connect()
+    {
+       $this->connection = new mysqli($this->servername, $this->username, $this->password);
+    }
+
+    public function query($aQuery)
+    {
+       if( $this->connection == null )
+         $this->connect();
+
+       return $this->connection->query($aQuery);
+    }
 }
-            
-   /*-------------------------Connexion à la base de donnée "sakila"---------------------------*/
-
-
-/*
-if( $titreFilm == "Matrix")
-   
-   $conn = new mysqli($servername, $username, $password); 
-      
-     
-   if($conn->connect_error){
-      die('Erreur : ' .$conn->connect_error);
-   }       
-   echo 'Successful connection ! <br><br><br>';
-
-
-
-
-
-  */
-
-         
-          
             
