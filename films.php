@@ -4,9 +4,12 @@ require 'classes/db.php';
    
 $laBase = new Database;
 
-$result = $laBase->query('SELECT title, description, rental_date, return_date, MIN(return_date) 
-                           FROM sakila.film LEFT JOIN sakila.rental ON film.film_id = rental.inventory_id GROUP BY title;');
-// SELECT title , description, rental_date, return_date, MAX(return_date) FROM sakila.film, sakila.rental GROUP BY title; (ne reconnait pas le foreach)
+$result = $laBase->query('SELECT title, description, (select return_date from sakila.rental where film_id = inventory_id order by rental_date desc limit 1)
+                         as return_date FROM
+                        sakila.film
+                        ;');
+
+
 
 echo "
   <h1>List of films-SAKILA</h1>
@@ -21,9 +24,11 @@ echo "
       <tr>
           <th>Title</th>
           <th>Description</th>
-          <th>Rental_date</th>
           <th>Return_date</th>
-          <th>Disponibility</th>                
+          <th></th>
+
+          
+                         
       </tr>
   </thead>
 ";
@@ -36,8 +41,9 @@ foreach( $result->fetch_all(MYSQLI_ASSOC) as $obj)
               <tr>
                 <td>".$obj["title"]."</td> 
                 <td>".$obj["description"]."</td>
-                <td>".$obj["rental_date"]."</td>
-                <td>".$obj["return_date"]."</td>  
+                <td>".$obj["return_date"]." </td>
+                <td><button href='reserv.php'>Reserve</button> <button>Amended</button></td>
+           
               </tr>
           </tbody>
   ";

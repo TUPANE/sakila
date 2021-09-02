@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
     </head>
     <body>
-        <h1>Sakila staff</h1>
+        <h1>Sakila staf</h1>
         <div id="container">
                 <!-- zone de connexion -->
                 
@@ -19,6 +19,7 @@
 
                     <input type="submit" id='submit' value='LOGIN' >
                     <?php
+                    // rajouter le code qui permet de se diriger vers la page films dés connexion
                     if(isset($_GET['erreur'])){
                         $err = $_GET['erreur'];
                         if($err==1 || $err==2)

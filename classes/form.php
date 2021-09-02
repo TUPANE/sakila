@@ -1,8 +1,8 @@
 <?php
-// ci-dessous sera un formulaire de reservation faite par un personnel de SAKILA
+// ci-dessous requête de formulaire de reservation faite par un personnel de SAKILA
 class Film { 
-    public $user_name;
-    public $user_pass;
+    public $title;
+    public $rental_duration;
 
     public $connection = null;
 
