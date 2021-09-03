@@ -1,10 +1,10 @@
 <?php
 
 class Database { 
-    private $servername = 'localhost';
-    private $bdd = 'sakila';
-    private $username = 'root';
-    private $password = '';
+    public $servername = 'localhost';
+    public $bdd = 'sakila';
+    public $username = 'root';
+    public $password = '';
 
     public $connection = null;
 
@@ -20,6 +20,15 @@ class Database {
 
        return $this->connection->query($aQuery);
     }
+
+    public function prepare($aQuery)
+    {
+       if( $this->connection == null )
+         $this->connect();
+
+       return $this->connection->prepare($aQuery);
+    }
+    
 }
 
          

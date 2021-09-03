@@ -1,10 +1,7 @@
 <?php
 
 include 'classes/db.php';
-
-
-
-
+// ci-dessous est le formulaire de réservation de film
 echo "
     <h1>Film reservation form-Sakila</h1>
     
@@ -19,8 +16,8 @@ echo "
                         <input type='text' name='title'  size='30' required />
                     </p>
                     <p>
-                        <label for='day'>Reservation date:</label> <br />
-                            <select name='day' id='day'>
+                        <label for='date'>Reservation date:</label> <br />
+                            <select name='date' id='date'>
                                 <option value='01'>01</option>
                                 <option value='02'>02</option>
                                 <option value='02'>03</option>
@@ -67,17 +64,13 @@ echo "
                         <input type='telephone' name='telephone' id='telephone' placeholder='00 00 00 00 00' size='20' required />
                     </p>
                    
-                    
+                    header('Location:validate.html');  
             </fieldset>
         </div>
         <input type='submit' value='Valid' />
     </form>      
 </section>
-
-
 ";
-//On renvoie l'utilisateur vers la page de remerciement
-// header("Location:validate.html");
 
 
 
