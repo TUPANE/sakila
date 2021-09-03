@@ -9,7 +9,7 @@ echo "
     <h1>Film reservation form-Sakila</h1>
     
     <section>    
-    <form method= 'post' action='validate.php'>
+    <form method= 'post' action='form.php'>
         <div id='reservation'>
             <fieldset>
                 <legend>Booking form</legend>
@@ -19,20 +19,8 @@ echo "
                         <input type='text' name='title'  size='30' required />
                     </p>
                     <p>
-                        <label for='Nom'>The expected rental period:</label> <br />
-                                <select name='jour' id='jour'>
-                                    <option value=01>01</option>
-                                    <option value='02'>02</option>
-                                    <option value='02'>03</option>
-                                    <option value='02'>04</option>
-                                    <option value='02'>05</option>
-                                    <option value='02'>06</option>
-                                    <option value='02'>07</option>
-                                </select>
-                    </p>
-                    <p>
-                        <label for='Nom'>Reservation date:</label> <br />
-                            <select name='jour' id='jour'>
+                        <label for='day'>Reservation date:</label> <br />
+                            <select name='day' id='day'>
                                 <option value='01'>01</option>
                                 <option value='02'>02</option>
                                 <option value='02'>03</option>
@@ -59,33 +47,27 @@ echo "
             <fieldset>
                 <legend>Your coordinates</legend>
                     <p>
-                        <label for='First-name'>First-name* :</label> <br />
-                        <input type='text' name='Nom' id='Nom' size='30' required />
+                        <label for='first-name'>First-name* :</label> <br />
+                        <input type='text' name='first_name' id='first_name' size='30' required />
                     </p>
                     <p>
-                        <label for='Last-name'>Last-name :</label> <br />
-                        <input type='text' name='Prenom' id='Prenom' size='30' required />
+                        <label for='last-name'>Last-name :</label> <br />
+                        <input type='text' name='last_name' id='last_name' size='30' required />
                     </p>
                     <p>
-                        <label for='Adresse'>Address* :</label> <br />
-                        <textarea name='Adresse' id='Adresse' rows='3' cols='25' required ></textarea>
+                    <label for='e_mail'>E-mail* :</label> <br />
+                    <input type='e_mail' name='e_mail' id='e_mail' size='40' required />
                     </p>
                     <p>
-                        <label for='Postal code'>Postal code* :</label> <br />
-                        <input type='text' name='Code_postal' id='Code_postal' size='15' required />
+                    <label for='adresse'>Address* :</label> <br />
+                    <textarea name='adress' id='Adress' rows='3' cols='25' required ></textarea>
                     </p>
                     <p>
-                        <label for='City'>City* :</label> <br />
-                        <input type='text' name='Ville' id='Ville' size='25' required />
+                        <label for='telephone'>Phone* :</label> <br />
+                        <input type='telephone' name='telephone' id='telephone' placeholder='00 00 00 00 00' size='20' required />
                     </p>
-                    <p>
-                        <label for='E_mail'>E-mail* :</label> <br />
-                        <input type='E_mail' name='E_mail' id='E_mail' size='40' required />
-                    </p>
-                    <p>
-                        <label for='Telephone'>Telephone* :</label> <br />
-                        <input type='tel' name='Telephone' id='Telephone' placeholder='00 00 00 00 00' size='20' required />
-                    </p>
+                   
+                    
             </fieldset>
         </div>
         <input type='submit' value='Valid' />
@@ -94,6 +76,9 @@ echo "
 
 
 ";
+//On renvoie l'utilisateur vers la page de remerciement
+// header("Location:validate.html");
+
 
 
 
