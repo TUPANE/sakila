@@ -1,3 +1,4 @@
+
 <html>
     <head>
        <meta charset="utf-8">
@@ -18,15 +19,9 @@
                     <input type="password" placeholder="Entrer le mot de passe" name="password" required><br><br>
 
                     <button href="films.php" class="button">Login</button>
-                    <input type="submit" id='submit' value='LOGIN' >
-                     <?php
-                    // // rajouter le code qui permet de se diriger vers la page films dés connexion
-                    // if(isset($_GET['erreur'])){
-                    //     $err = $_GET['erreur'];
-                    //     if($err==1 || $err==2)
-                    //         echo "<p style='color:black'>Utilisateur ou mot de passe incorrect</p>";
-                    // }
-                    ?> 
+                    
+                     
+                 
                 </form>
             </div>
     </body>

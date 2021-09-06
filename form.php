@@ -20,7 +20,7 @@ $phone = $_POST["telephone"];
              VALUES (?, ?, ?)");
          $sth->bind_param('sss', $first_name, $last_name, $e_mail);
          $sth->execute();
-
+    //On renvoie l'utilisateur vers la page de films et cela vaut aussi que le formulaire à bien été prit en compte
      header("Location:films.php");
  }
  catch(PDOException $e){

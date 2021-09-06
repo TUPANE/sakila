@@ -18,7 +18,7 @@ if (isset($_GET["title"]))
 $result = $laBase->query($query);
  
 // ligne 21 à 46 permet d'afficher le tableau
-echo "<h1>Liste des films ".$aSearch;
+echo "<h1>Liste des films";
 
 echo  "</h1>
 
@@ -54,7 +54,7 @@ foreach( $result->fetch_all(MYSQLI_ASSOC) as $obj)
                 <td>".$obj["title"]."</td> 
                 <td>".$obj["description"]."</td>
                 <td>".$obj["return_date"]." </td>
-                <td><button>Reserve</button> <button>Amended</button></td>
+                <td><button href='reserv.php' class='button'>Reserve</button> <button>Amended</button></td>
            
               </tr>
           </tbody>
