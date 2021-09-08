@@ -18,10 +18,7 @@
                     <label><b>Password</b></label>
                     <input type="password" placeholder="Entrer le mot de passe" name="password" required><br><br>
 
-                    <button href="films.php" class="button">Login</button>
-                    
-                     
-                 
+                    <button href="films.php" class="button">Login</button> 
                 </form>
             </div>
     </body>

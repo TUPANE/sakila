@@ -1,5 +1,6 @@
 <?php
 
+// ci-dessous permet de se connecter à la base de donnée
 class Database { 
     public $servername = 'localhost';
     public $bdd = 'sakila';
@@ -8,13 +9,14 @@ class Database {
 
     public $connection = null;
 
+   
     private function connect()
     {
        $this->connection = new mysqli($this->servername, $this->username, $this->password);
     }
 
     public function query($aQuery)
-    {
+    { 
        if( $this->connection == null )
          $this->connect();
 

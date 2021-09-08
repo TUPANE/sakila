@@ -1,23 +1,22 @@
 <?php
-  // ligne 3 à 4 création d'un nouveau objet(1) enfant de la classe Datase et connection vers la base de donnée
+  // creation of a new object (1) child of the Datase class and connection to the database
 require 'classes/db.php';
 $laBase = new Database;
 
-// ligne 9 à 10 requête vers la base de donné sakila
+// request to the sakila database
 $query = "SELECT title, description, (select return_date from sakila.rental where film_id = inventory_id order by rental_date desc limit 1)
 as return_date FROM sakila.film";
 
-// ligne 12 à 31 afficher dans la bare de recherche les titre de film 
+// display the choice of film titles in the search bar
 if (isset($_GET["title"]))
 {
   $aSearch = $_GET["title"];
   $query .= " where title like '%".$aSearch."%'"; 
 }
 
-
 $result = $laBase->query($query);
  
-// ligne 21 à 46 permet d'afficher le tableau
+// Table display
 echo "<h1>Liste des films";
 
 echo  "</h1>
@@ -44,8 +43,10 @@ echo  "</h1>
       </tr>
   </thead>
 ";
-// ligne 46 à 60 permet de rechercher dans la base de donnée et afficher sur le tableau designer ci-dessus
+
+//below allows you to search in the database and display on the designer table above
 foreach( $result->fetch_all(MYSQLI_ASSOC) as $obj)
+
 {
    echo "
         
@@ -54,7 +55,7 @@ foreach( $result->fetch_all(MYSQLI_ASSOC) as $obj)
                 <td>".$obj["title"]."</td> 
                 <td>".$obj["description"]."</td>
                 <td>".$obj["return_date"]." </td>
-                <td><button href='reserv.php' class='button'>Reserve</button> <button>Amended</button></td>
+                <td><button href='reserv.php' class='button'>Reserve</button> <button>Amended</button></td> 
            
               </tr>
           </tbody>

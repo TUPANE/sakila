@@ -1,9 +1,9 @@
 <?php
-// Ce fichier permet d'afficher à l'utilisateur  que le formulaire est bien remplit et envoyer à la base de donnée
+//This file is used to display to the user that the form is correctly filled and send to the database
 
     include 'classes/db.php';
     
-    echo ' class= "bold" Formulaire de reservation bien prit en compte ! <br><br>';
+    echo ' Formulaire de reservation bien prit en compte ! <br><br>';
     // echo 'Movie title : ' .$_POST["title"].'<br>';
     // echo 'Create_date : ' .$_POST["date"].'<br>';
     // echo 'First-name : ' .$_POST["first_name"].'<br>';
